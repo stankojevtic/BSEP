@@ -1,0 +1,116 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://xml.poslovna.bezbednost/ws/NalogZaPrenos"
+    xmlns:nzp="http://xml.poslovna.bezbednost/ws/NalogZaPrenos">
+    
+    <xs:element name="NalogZaPrenosRequest" type="nzp:NalogZaPrenosRequest" />
+    <xs:element name="NalogZaPrenosResponse" type="nzp:NalogZaPrenosResponse" />
+    
+    <xs:complexType name="NalogZaPrenosRequest">
+        <xs:sequence>
+            <xs:element name="IDPoruke" type="nzp:TIDPoruke" />
+            <xs:element name="Nalog" type="nzp:TNalog" />
+            <xs:element name="OznakaValute" type="nzp:TOznakaValute" />
+            <xs:element name="Hitno" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="NalogZaPrenosResponse">
+        <xs:sequence>
+            <xs:element name="odgovor" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="TNalog">
+        <xs:sequence>
+            <xs:element name="Duznik" type="nzp:TOpis" />
+            <xs:element name="SvrhaPlacanja" type="nzp:TOpis" />
+            <xs:element name="Primalac" type="nzp:TOpis" />
+            <xs:element name="DatumNaloga" type="xs:date" />
+            <xs:element name="DatumValute" type="xs:date" />
+            <xs:element name="DuznikRacun" type="nzp:TPodaciORacunu" />
+            <xs:element name="PoverilacRacun" type="nzp:TPodaciORacunu" />
+            <xs:element name="Iznos" type="nzp:TIznos" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="TIDPoruke">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+            <xs:minLength value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="TPodaciORacunu">
+        <xs:sequence>
+            <xs:element name="Racun" type="nzp:TBrojRacuna" />
+            <xs:element name="Model" type="nzp:TModel"/>
+            <xs:element name="PozivNaBroj" type="nzp:TPozivNaBroj"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="TModel">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="99" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TPozivNaBroj">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TIznos">
+        <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="15" />
+            <xs:fractionDigits value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TOznakaValute">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+            <xs:minLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TOpis">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TBrojRacuna">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3}-\d{13}-\d{2}" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!--<xs:complexType name="TUcesnik">
+        <xs:sequence>
+            <xs:element name="Lice" type="nzp:TPravnoLice" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TPravnoLice">
+        <xs:sequence>
+            <xs:element name="Naziv">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Adresa">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="PIB">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="11" />
+                        <xs:minLength value="11" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>-->
+</xs:schema>

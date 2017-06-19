@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://xml.poslovna.bezbednost/ws/Izvod"
+    xmlns:nzp="http://xml.poslovna.bezbednost/ws/NalogZaPrenos"
+    xmlns:pr="http://xml.poslovna.bezbednost/ws/Izvod">
+
+    <xs:import namespace="http://xml.poslovna.bezbednost/ws/NalogZaPrenos"
+        schemaLocation="NalogZaPrenos.xsd"/>
+    
+    <xs:element name="IzvodRequest" type="pr:IzvodRequest" />
+    <xs:element name="IzvodResponse" type="pr:IzvodResponse" />
+    
+    <xs:complexType name="IzvodRequest">
+        <xs:sequence>
+            <xs:element name="Zahtev" type="pr:TZahtev"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="IzvodResponse">
+        <xs:sequence>
+            <xs:element name="ZaglavljePreseka" type="pr:TZaglavljePreseka"/>
+            <xs:element maxOccurs="unbounded" name="StavkaPreseka" type="pr:TStavkaPreseka"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    
+    <xs:complexType name="TZaglavljePreseka">
+        <xs:sequence>
+            <xs:element name="Zahtev" type="pr:TZahtev"/>
+            <xs:element name="PrethodnoStanje" type="pr:TStanjeIliSuma"/>
+            <xs:element name="BrojPromenaUKorist" type="pr:TBrojPromena"/>
+            <xs:element name="UkupnoUKorist" type="pr:TStanjeIliSuma"/>
+            <xs:element name="BrojPromenaNaTeret" type="pr:TStanjeIliSuma"/>
+            <xs:element name="UkupnoNaTeret" type="pr:TStanjeIliSuma"/>
+            <xs:element name="NovoStanje" type="pr:TStanjeIliSuma"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="TStavkaPreseka">
+        <xs:sequence>
+            <xs:element name="Nalog" type="nzp:TNalog"/>
+            <xs:element name="Smer" type="pr:TSmer"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="TZahtev">
+        <xs:sequence>
+            <xs:element name="BrojRacuna" type="nzp:TBrojRacuna"/>
+            <xs:element name="Datum" type="xs:date"/>
+            <xs:element name="RedniBrojPreseka" type="pr:TRBPreseka"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    <xs:simpleType name="TRBPreseka">
+        <xs:restriction base="xs:int">
+            <xs:maxInclusive value="99"/>
+            <xs:minInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TStanjeIliSuma">
+        <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="15"/>
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TBrojPromena">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="999999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TSmer">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/IV godina/VIII-Semestar/Bezbednost u sistemima elektronskog poslovanja/Vežbe/3. Primenjena kriptografija/3. Primenjena kriptografija/lib/bcpkix-jdk15on-1.56.jar"/>
+	<classpathentry kind="lib" path="D:/IV godina/VIII-Semestar/Bezbednost u sistemima elektronskog poslovanja/Vežbe/3. Primenjena kriptografija/3. Primenjena kriptografija/lib/bcprov-jdk15on-1.56.jar"/>
+	<classpathentry kind="lib" path="D:/IV godina/VIII-Semestar/Bezbednost u sistemima elektronskog poslovanja/Vežbe/3. Primenjena kriptografija/3. Primenjena kriptografija/lib/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="D:/IV godina/VIII-Semestar/Bezbednost u sistemima elektronskog poslovanja/Vežbe/3. Primenjena kriptografija/3. Primenjena kriptografija/lib/slf4j-nop-1.7.25.jar"/>
+	<classpathentry kind="lib" path="D:/IV godina/VIII-Semestar/Bezbednost u sistemima elektronskog poslovanja/Vežbe/3. Primenjena kriptografija/3. Primenjena kriptografija/lib/xmlsec-2.0.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jevtic/Desktop/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jevtic/Desktop/sqljdbc.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

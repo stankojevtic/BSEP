@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:NalogZaPrenosRequest xmlns:ns2="http://nalogzaprenos.ws.xml.poslovna.bezbednost/">
+    <IDPoruke>nalog-za-placanje</IDPoruke>
+    <Nalog>
+        <Duznik>Duznika - bla bla</Duznik>
+        <SvrhaPlacanja>Svrha placanja - bla bla</SvrhaPlacanja>
+        <Primalac>Primalac bla bla</Primalac>
+        <DatumNaloga>2017-04-15+00:01</DatumNaloga>
+        <DatumValute>2017-04-10+00:01</DatumValute>
+        <DuznikRacun>
+            <Racun>111-1112223334445-67</Racun>
+            <Model>90</Model>
+            <PozivNaBroj>neki broj...</PozivNaBroj>
+        </DuznikRacun>
+        <PoverilacRacun>
+            <Racun>111-2223334445556-78</Racun>
+            <Model>90</Model>
+            <PozivNaBroj>neki broj...111</PozivNaBroj>
+        </PoverilacRacun>
+        <Iznos>200000</Iznos>
+    </Nalog>
+    <OznakaValute>RSD</OznakaValute>
+    <Hitno>true</Hitno>
+</ns2:NalogZaPrenosRequest>

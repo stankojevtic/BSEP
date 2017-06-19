@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><ns2:NalogZaPrenosRequest xmlns:ns2="http://nalogzaprenos.ws.xml.poslovna.bezbednost/">
+    <IDPoruke>nalog-za-placanje</IDPoruke>
+    <Nalog>
+        <Duznik>Duznika - bla bla</Duznik>
+        <SvrhaPlacanja>Svrha placanja - bla bla</SvrhaPlacanja>
+        <Primalac>Primalac bla bla</Primalac>
+        <DatumNaloga>2017-04-15+00:01</DatumNaloga>
+        <DatumValute>2017-04-10+00:01</DatumValute>
+        <DuznikRacun>
+            <Racun>111-1112223334445-67</Racun>
+            <Model>90</Model>
+            <PozivNaBroj>neki broj...</PozivNaBroj>
+        </DuznikRacun>
+        <PoverilacRacun>
+            <Racun>111-2223334445556-78</Racun>
+            <Model>90</Model>
+            <PozivNaBroj>neki broj...111</PozivNaBroj>
+        </PoverilacRacun>
+        <Iznos>200000</Iznos>
+    </Nalog>
+    <OznakaValute>RSDa</OznakaValute>
+    <Hitno>false</Hitno>
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+<ds:Reference URI="">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+<ds:Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>NDk9olEwnfsGfXUOFt4Plew74KY=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>
+HOpwt16v9O255b69teOEIiH7OWtCR4yxzORgoRmIJdkzMeAtOcxHH/ycX3n580P6n0rYM6M0GCj9
+Jo6KyXPkL+32iQam0pI6J8PpAHUG/1O/tHFwq8pIKvnGyNbTf5jBC15P6O7uzrryrZdKdMzuHS9r
+vHvp355sDtqqu7ccJjU=
+</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:KeyValue>
+<ds:RSAKeyValue>
+<ds:Modulus>
+zQ9KJLShafi/S2HkWlfnRpKcuLB4BgeJ5y2wBafGRRNz5kss0gjzzQZIDf684gwQ2WYEDlH2s+OX
+fbX4v6KTKJ4ug0wfY05sciJ7Dx+HOPUw6KU5aWvbBIKAXJE+MCSaO/FSk+ujgXSZAY/epUsSqBo2
+EZgUl90oEpTRbV+xX8E=
+</ds:Modulus>
+<ds:Exponent>AQAB</ds:Exponent>
+</ds:RSAKeyValue>
+</ds:KeyValue>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIBtjCCAR8CBEZasCQwDQYJKoZIhvcNAQEFBQAwIjEPMA0GA1UECwwGcHJpbWVyMQ8wDQYDVQQD
+DAZwcmltZXIwHhcNMDcwNTI4MTAzNDEyWhcNMjcwNTIzMTAzNDEyWjAiMQ8wDQYDVQQLDAZwcmlt
+ZXIxDzANBgNVBAMMBnByaW1lcjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAzQ9KJLShafi/
+S2HkWlfnRpKcuLB4BgeJ5y2wBafGRRNz5kss0gjzzQZIDf684gwQ2WYEDlH2s+OXfbX4v6KTKJ4u
+g0wfY05sciJ7Dx+HOPUw6KU5aWvbBIKAXJE+MCSaO/FSk+ujgXSZAY/epUsSqBo2EZgUl90oEpTR
+bV+xX8ECAwEAATANBgkqhkiG9w0BAQUFAAOBgQB2HjPI427zRaVfLTaeNVcjH9hoTkl9OUJAAmEa
+6EQdbdqZ75ca3IfuLHJFJ8zzyBP4LUGSxgA4OpnKs6Ej5w2n0GHmu0g4YqxInfpv/kCwswoia4Oz
+a17te8mMamffCn3ySX5yZzEex5nueNAyhJkmWBcBCOvJw4+U+gSK50Xbcw==
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+</ds:Signature></ns2:NalogZaPrenosRequest>
